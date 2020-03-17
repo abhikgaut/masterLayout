@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/style/StyleSheet1.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body >
+    <div class="Main">        
+        <img src="~/image/newlogo.jpg" class="img"/>
+    </div>
+    <div class="bar">
+        <ul>
+            <li><a class="active" href="Login/loginPage">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </div>
+    <div style="position:absolute;top:50%;left:5%">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@model masterLayout.tblLogin
+@{
+    ViewBag.Title = "search";
+}
+
+<h2>search</h2>
+@using (Html.BeginForm())
+{
+    if (ViewBag.msg != null)
+    {
+    <h4 style="color:darkblue;font-weight:bold">@ViewBag.msg</h4>
+    }
+}

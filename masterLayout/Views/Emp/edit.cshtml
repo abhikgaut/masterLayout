@@ -1,0 +1,48 @@
+﻿@model masterLayout.EMPDATA
+@{
+    ViewBag.Title = "edit";
+    <script src="~/Scripts/jsIndex.js"></script>
+}
+
+<h2>edit</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Employee Number</td>
+            <td>@Html.TextBoxFor(a => a.EMPNO, new { onblur = "func();" })</td>
+        </tr>
+        <tr>
+            <td>Employee Name</td>
+            <td>@Html.TextBoxFor(a => a.ENAME)</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            <td>@Html.TextBoxFor(a => a.JOB)</td>
+        </tr>
+        <tr>
+            <td>Manager</td>
+            <td>@Html.TextBoxFor(a => a.MGR)</td>
+        </tr>
+        <tr>
+            <td>Hiredate</td>
+            <td>@Html.TextBoxFor(a => a.HIREDATE)</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@Html.TextBoxFor(a => a.SAL)</td>
+        </tr>
+        <tr>
+            <td>Commission</td>
+            <td>@Html.TextBoxFor(a => a.COMM)</td>
+        </tr>
+        <tr>
+            <td>Dept Number</td>
+            <td>@Html.TextBoxFor(a => a.DEPTNO)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update" /></td>
+        </tr>
+    </table>
+}

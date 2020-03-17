@@ -1,0 +1,38 @@
+﻿@model IEnumerable<masterLayout.EMPDATA>
+@{
+    ViewBag.Title = "chkboxEmp";
+}
+
+<h2>chkboxEmp</h2>
+@using (Html.BeginForm())
+{
+    if (Model != null)
+    {
+        <table>
+            <tr>
+                <td>Emp no</td>
+                <td>Emp name</td>
+                <td>job</td>
+                <td>manager</td>
+                <td>hiredate</td>
+                <td>salary</td>
+                <td>commission</td>
+                <td>dept no</td>
+            </tr>
+            @foreach (var E in Model)
+            {
+                <tr>
+                    <td>@E.EMPNO</td>
+                    <td>@E.ENAME</td>
+                    <td>@E.JOB</td>
+                    <td>@E.MGR</td>
+                    <td>@E.HIREDATE</td>
+                    <td>@E.SAL</td>
+                    <td>@E.COMM</td>
+                    <td>@E.DEPTNO</td>
+                </tr>
+            }
+        </table>
+    }
+}
+

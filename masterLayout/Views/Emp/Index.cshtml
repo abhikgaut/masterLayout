@@ -1,0 +1,50 @@
+﻿@model IEnumerable<masterLayout.EMPDATA>
+@{
+        Layout = "~/Views/Shared/_MasterLayoutPage1.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>@Html.ActionLink("create new","create","emp")</p>
+@using (Html.BeginForm("chkboxEmp","Emp"))
+{
+<table >
+    <tr>
+        <th></th>
+        <th>empno</th>
+        <th>ename</th>
+        <th>job</th>
+        <th>mgr</th>
+        <th>hiredate</th>
+        <th>sal</th>
+        <th>comm</th>
+        <th>deptno</th>
+        <th></th>
+    </tr>
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@Html.CheckBox("cid", new { @value = e.EMPNO })</td>
+            <td>@e.EMPNO</td>
+            <td>@e.ENAME</td>
+            <td>@e.JOB</td>
+            <td>@e.MGR</td>
+            <td>@e.HIREDATE</td>
+            <td>@e.SAL</td>
+            <td>@e.COMM</td>
+            <td>@e.DEPTNO</td>
+            <td>
+                @Html.ActionLink("edit emp", "edit", "emp", new { id = e.EMPNO }, null)
+            </td>
+            <td>
+                @Html.ActionLink("delete emp", "delete", "emp", new { id = e.EMPNO }, null)
+            </td>
+
+        </tr>
+
+    }
+    <tr>
+        <td><input id="Submit1" type="submit" value="Submit" /></td>
+    </tr>
+</table>
+}
